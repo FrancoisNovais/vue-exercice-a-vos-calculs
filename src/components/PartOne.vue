@@ -8,8 +8,7 @@ const average = computed(() => {
   for (let i = 0; i < number.length; i++) {
     total += number[i]
   }
-  total = total / number.length
-  return total
+  return total / number.length
 })
 // console.log('Computed value ==> ', average.value)
 

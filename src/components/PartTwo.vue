@@ -60,34 +60,34 @@ const members = reactive([
     ]
   }
 ])
-const numberOfMembers = computed(() => {
-  let totalMembers = members.length
+const numberOfMember = computed(() => {
+  let totalMember = members.length
 
-  return totalMembers
+  return totalMember
 })
-const numberOfBooks = computed(() => {
-  let totalBooks = 0
+const numberOfBook = computed(() => {
+  let totalBook = 0
 
   for (let i = 0; i < members.length; i++) {
-    totalBooks += members[i].books.length
+    totalBook += members[i].books.length
   }
 
-  return totalBooks
+  return totalBook
 })
-const numberOfPages = computed(() => {
-  let totalPages = 0
+const numberOfPage = computed(() => {
+  let totalPage = 0
 
   for (let i = 0; i < members.length; i++) {
     for (let j = 0; j < members[i].books.length; j++) {
-      totalPages += members[i].books[j].numOfPages
+      totalPage += members[i].books[j].numOfPages
     }
   }
 
-  return totalPages
+  return totalPage
 })
 // console.log('Computed value ==> ', numberOfPages.value)
 
-const addMembers = () => {
+const addMember = () => {
   members.push({
     id: 4,
     name: 'John',
@@ -107,13 +107,13 @@ const addMembers = () => {
 </script>
 <template>
   <div>
-    <p>Le groupe de lecture compte {{ numberOfMembers }} membres</p>
+    <p>Le groupe de lecture compte {{ numberOfMember }} membres</p>
     <p>
-      A eux {{ numberOfMembers }}, ils ont lu {{ numberOfBooks }} livres pour un total de
-      {{ numberOfPages }}
+      A eux {{ numberOfMember }}, ils ont lu {{ numberOfBook }} livres pour un total de
+      {{ numberOfPage }}
       pages
     </p>
-    <button @click="addMembers">Ajouter un membre</button>
+    <button @click="addMember">Ajouter un membre</button>
   </div>
 </template>
 <style scoped></style>
